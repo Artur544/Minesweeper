@@ -39,7 +39,7 @@ class Info:
         ]
         self.styles = [
             Button(35, 75, 0, 56, 24, 24),
-            Button(65, 75, 8, 56, 24, 24)
+            Button(65, 75, 24, 56, 24, 24)
         ]
 
     def show_info(self):
@@ -99,8 +99,6 @@ class Info:
         x_cbomb = 62 + (28 - pyxel.FONT_WIDTH * len(str(self.bombs))) / 2
         pyxel.text(x_tset, 55, "GERAL", 5, font=None)
         pyxel.text(x_tall, 67, "MODO:", 5, font=None)
-        # pyxel.text(x_tbomb, 82, "BOMBAS", 5, font=None)
-        # pyxel.text(x_cbomb, 90, f"{self.bombs}", 5, font=None)
         self.stars_display(self.dif)
         self.styles_display(self.style)
         for btn in self.btn_conf: btn.draw()
@@ -114,7 +112,7 @@ class Info:
     def styles_display(self, style):
         for i in range(len(self.styles)):
             if i == style:
-                pyxel.rectb(self.styles[i].x-1, self.styles[i].y-1, self.styles[i].W+2, self.styles[i].H+2, 6)
+                pyxel.rectb(self.styles[i].x-1, self.styles[i].y-1, self.styles[i].W+2, self.styles[i].H+2, 5)
             self.styles[i].draw()
 
     def draw(self):
